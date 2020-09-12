@@ -1,0 +1,30 @@
+#d1
+{
+	padding-top: 109px;
+	margin-left: 450px;
+}
+#d2
+{
+	background-size: 272px 92px;
+	height: 92px;
+	width: 272px;
+}
+#img1
+{
+	margin-left: 70px;
+	height: 200px;
+	width: 250px;
+}
+
+#text
+{
+	width: 340px;
+}
+#item
+{
+    width: 20px;
+}
+select
+{
+    width: 15px;
+}
