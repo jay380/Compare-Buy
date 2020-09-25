@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>python to html</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<style type="text/css">
+	#filter
+	{
+		margin-top: 50px;
+	}
+</style>
+<body>
+	<nav class="navbar navbar-inverse">
+    	<div class="container-fluid">
+    		<div class="navbar-header">
+				<a class="navbar-brand" href="#"><i>Compare & Buy</i></a>
+    		</div>
+  		</div>
+	</nav>
+
+	
+	<div class="col-md-2">
+		<form action="." method="post" id="filter">
+			<label>RAM:</label>
+			<hr/>
+			<input type="checkbox" value="4GB" name="ram">
+			<label>4GB</label>
+			<br>
+			<input type="checkbox" value="8GB" name="ram">
+			<label>8GB</label>
+			<br>
+			<input type="checkbox" value="12GB" name="ram">
+			<label>16GB</label>
+			<hr/>
+			<label>STORAGE:</label>
+			<hr/>
+			<input type="checkbox" value="500GB" name="storage">
+			<label>500GB</label>
+			<br>
+			<input type="checkbox" value="1TB" name="storage">
+			<label>1TB</label>
+			<br>
+			<input type="checkbox" value="2TB" name="storage">
+			<label>2TB</label>
+			<br>
+			<br>
+			<button class="btn btn-success" type="submit">Apply</button>
+		</form>
+	</div>
+	<div class="col-md-8">
+		<div class="row">
+			<h2 class="text-center">Amazon:</h2>
+			{% for i in range(0,10) %}
+				<div class="col-md-3 text-center" style="top: 10px">
+					<p><img src="{{img1[i]}}" height="150" width="200"/></p>
+					<p><strong>{{title1[i]}}</strong></p>
+					<p class="text-danger">Price:{{price1[i]}}</p>
+					<a href="{{url1[i]}}">GoTo Page </a>
+					<hr>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="row">
+			<h2 class="text-center">Flipkart:</h2>
+			{% for i in range(0,10) %}
+				<div class="col-md-3 text-center">
+					<p><img src="{{img2[i]}}" height="150" width="200"/></p>
+					<p><strong>TITLE:{{title2[i]}}</strong></p>
+					<p class="text-danger">Price:{{price2[i]}}</p>
+					<a href="{{url2[i]}}">GoTo Page </a>
+					<hr>
+				</div>
+			{% endfor %}
+	   </div>
+</body>
+</html>
